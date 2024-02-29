@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image.jpg" href="Kungfu panda .0.jpg">
+    <title>Countdown Timer</title>
+</head>
+<body>
+    <div class="one">
+        <h1> Coming Out Friday 8th march 2024 CAT(Center African Time)</h1>
+        <br>
+        <img id="img" src="Kungfu panda.jpg" alt="Kungfu" width="250px">
+        <br>
+        <p> Kungfu Panda 4
+            Po must train a new warrior when he's chosen to become the spiritual leader of the Valley of Peace. However,<br>
+            when a powerful shape-shifting sorceress sets her eyes on his Staff of Wisdom, he suddenly realizes he's going <br>
+            to need some help. Teaming up with a quick-witted corsac fox, Po soon discovers that heroes can be found in the <br>
+            most unexpected places.   
+        </p>
+    </div>
+    <br>
+    <div class="container">
+        <div id="countdown">
+          <ul>
+            <li><span id="days"></span>days</li>
+            <li><span id="hours"></span>Hours</li>
+            <li><span id="minutes"></span>Minutes</li>
+            <li><span id="seconds"></span>Seconds</li>
+          </ul>
+        </div>
+    </div>
+      <script>
+        var countDownDate = new Date("Mar 8, 2024 11:30:00").getTime();
+            var x = setInterval(function(){
+                var now = new Date().getTime();
+                var distance = countDownDate - now;
+
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById("days").innerHTML = days;
+                document.getElementById("hours").innerHTML = hours;
+                document.getElementById("minutes").innerHTML = minutes;
+                document.getElementById("seconds").innerHTML = seconds;
+                
+                if(distance < 0){
+                    clearInterval(x);
+                    document.getElementById("days").innerHTML = "00";
+                    document.getElementById("hours").innerHTML = "00";
+                    document.getElementById("minutes").innerHTML = "00";
+                    document.getElementById("seconds").innerHTML = "00";
+                }
+
+            },1000);
+        </script>   
+    
+    
+
+</body>
+</html>
